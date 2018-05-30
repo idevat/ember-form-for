@@ -22,10 +22,11 @@
 		{{/if}}
 		<span>{{label}}</span>
 	</span>
-	{{#if (get (get object propertyName) 'checked')}}
-		<input value={{get (get object propertyName) 'plugs'}} placeholder={{label}} oninput={{action (mut (get (get object propertyName) 'plugs')) value="target.value"}} >
+	{{#if port}}
+		{{#if (get (get object propertyName) 'checked')}}
+			<input value={{get (get object propertyName) 'plugs'}} placeholder={{label}} oninput={{action (mut (get (get object propertyName) 'plugs')) value="target.value"}} >
+		{{/if}}
 	{{/if}}
-
   {{f.errors}}
   {{f.hint}}
 {{/form-field}}
